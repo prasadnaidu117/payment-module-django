@@ -1,0 +1,51 @@
+# Payment Module API Test Examples
+
+## 1. List All Payments
+GET http://localhost:8000/payments/
+
+## 2. Create Payment
+POST http://localhost:8000/payments/
+Content-Type: application/json
+
+{
+    "order_id": "ord-123456789",
+    "amount": 150.00,
+    "currency": "USD",
+    "idempotency_key": "unique-key-123"
+}
+
+## 3. Get Payment Status (Replace {id})
+GET http://localhost:8000/payments/1/
+
+## 4. Get Payments for Order (Replace {order_id})
+GET http://localhost:8000/payments/order/ord-123456789/
+
+## 5. Refund Payment (Replace {id})
+POST http://localhost:8000/payments/1/refund/
+Content-Type: application/json
+
+{}
+
+## 6. Update Payment Status [Manual/Webhook] (Replace {id})
+PATCH http://localhost:8000/payments/1/
+Content-Type: application/json
+
+{
+    "status": "cancelled"
+}
+
+---
+# CURL Commands for Terminal
+
+# Create Payment
+curl -X POST http://localhost:8000/payments/ \
+-H "Content-Type: application/json" \
+-d '{"order_id": "ord-test-001", "amount": 99.00, "currency": "USD", "idempotency_key": "idemp-test-001"}'
+
+# Get Status
+curl http://localhost:8000/payments/1/
+
+# Refund
+curl -X POST http://localhost:8000/payments/1/refund/ \
+-H "Content-Type: application/json" \
+-d '{}'

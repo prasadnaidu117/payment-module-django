@@ -1,10 +1,10 @@
-# 💳 Payment Module – Django Backend Assignment
+#  Payment Module – Django Backend Assignment
 
 A complete backend **Payment Module** built using **Django REST Framework** and **PostgreSQL**, implementing real-world payment concepts such as idempotency, order-level validation, and refund handling.
 
 ---
 
-## 📌 Project Overview
+##  Project Overview
 
 This project implements a simple and robust Payment Module that supports:
 
@@ -17,7 +17,7 @@ The system is designed with **idempotency support** to avoid duplicate payments 
 
 ---
 
-## 🛠️ Technology Stack
+##  Technology Stack
 
 - **Python 3.7.0**
 - **Django 3.2.25**
@@ -29,7 +29,7 @@ The system is designed with **idempotency support** to avoid duplicate payments 
 ---
 
 
-## ⚙️ Project Setup (Step-by-Step)
+##  Project Setup (Step-by-Step)
 
 1. Install **Python 3.7.0** and ensure it is added to PATH.
 2. Create and activate a virtual environment:
@@ -63,7 +63,7 @@ Start the Django development server.
 ```bash
 python manage.py runserver
 ```
-## ▶️ Execution Commands
+##  Execution Commands
 ```bash
 pip install -r requirements.txt
 pip install psycopg2-binary
@@ -90,7 +90,7 @@ POST /payments/{id}/refund/ – Refund a successful payment
 
 PATCH /payments/{id}/ – Update payment status
 
-## 🧠 Business Rules Implemented
+##  Business Rules Implemented
 
 Idempotency key prevents duplicate payment creation.
 
@@ -100,7 +100,7 @@ Payments with status other than SUCCESS cannot be refunded.
 
 Refunded payments are marked as REFUNDED.
 
-## 🧪 Testing
+##  Testing
 
 All APIs can be tested using Postman.
 
